@@ -5,6 +5,7 @@ const productSlice = createSlice({
     name:'product',
     initialState:{
         product:[],
+        parfum:[],
         linkValue:[],
         searchValue:'',
         category:'',
@@ -13,6 +14,9 @@ const productSlice = createSlice({
     reducers:{
       getProduct:(state,action) => {
           state.product = action.payload.products
+      },
+      getProductSoup:(state, action) => {
+          state.parfum = action.payload.products
       },
       getValueSearch:(state,action) => {
           state.searchValue = action.payload
@@ -32,6 +36,11 @@ export const getProductFunc = () => apiCall({
     url:'/api/product/',
     method:'GET',
     onSuccess:productSlice.actions.getProduct.type
+})
+export const getProductSoupFunc = () => apiCall({
+    url:'/api/product?category=skincare',
+    method:'GET',
+    onSuccess:productSlice.actions.getProductSoup.type
 })
 export const getValueSearchFunc = (event) => {
     return dispatch => {

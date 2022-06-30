@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {getProductFunc, getValueCategory, getValueSearchFunc} from "../store/Reducer/productSlice";
+import {getProductFunc, getProductSoupFunc, getValueCategory, getValueSearchFunc} from "../store/Reducer/productSlice";
 import {Link} from "react-router-dom";
-const Products = ({product,searchValue,category,getValueCategory,getValueSearchFunc,getProductFunc}) => {
+const Products = ({parfum,product,searchValue,category,getValueCategory,getValueSearchFunc,getProductFunc,getProductSoupFunc}) => {
 
     const [ page, setPage ] = useState(1);
 
@@ -18,7 +18,11 @@ const Products = ({product,searchValue,category,getValueCategory,getValueSearchF
 
     useEffect(()=>{
         getProductFunc()
+        getProductSoupFunc()
+
     },[])
+
+        const mergeArray = [...product, ...parfum]
 
     return(
         <div className={'h-screen bg-[#0F172A]'}>
@@ -29,6 +33,7 @@ const Products = ({product,searchValue,category,getValueCategory,getValueSearchF
                             <option value="">All</option>
                             <option value="smartphones">Smartphones</option>
                             <option value="laptop">Laptop</option>
+                            <option value="skincare">skincare</option>
                         </select>
                         <input type="search"
                                className={'focus:outline-none border-none rounded bg-slate-700 pr-15 px-5 sm:w-1/3 text-white'}
@@ -40,7 +45,7 @@ const Products = ({product,searchValue,category,getValueCategory,getValueSearchF
                     <div className={'flex flex-wrap'}>
                         {
 
-                            product.filter(item => {
+                            mergeArray.filter(item => {
                                 if (searchValue === '') {
                                     return item
                                 } else if (item.title.includes(searchValue)) {
@@ -116,15 +121,18 @@ export default  connect((
     {
         productSlice: {
             product,
+            parfum,
             searchValue,
             category
         }
     }) => ({
     product,
+    parfum,
     searchValue,
     category
 }), {
     getProductFunc,
     getValueSearchFunc,
-    getValueCategory
+    getValueCategory,
+    getProductSoupFunc
 })(Products)
