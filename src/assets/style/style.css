@@ -1,0 +1,20 @@
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #6366F1;
+    background-color: transparent;
+}
+::-webkit-scrollbar{
+    width: 4px;
+    background: transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    height: 2px;
+    width: 16px;
+    background-position: center 2px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+}
+::selection {
+    color: #371B5C;
+    background: #CF6630;
+}

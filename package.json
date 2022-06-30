@@ -1,0 +1,55 @@
+{
+  "name": "hammol-test-mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" \" node index.js \" style \" ",
+    "serve": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "tailwindcss -i ./src/assets/style/input.css -o ./src/assets/style/output.css --watch"
+  },
+  "keywords": [
+    "hi",
+    "there"
+  ],
+  "author": "bekzodbob",
+  "license": "ISC",
+  "dependencies": {
+    "@headlessui/react": "^1.6.5",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase": "^9.8.4",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.0.5",
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^3.1.4"
+  },
+  "devDependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@tailwindcss/forms": "^0.5.2",
+    "axios": "^0.27.2",
+    "nodemon": "^2.0.18",
+    "react": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
