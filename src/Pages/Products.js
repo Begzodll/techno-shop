@@ -13,7 +13,7 @@ const Products = ({parfum,product,searchValue,category,getValueCategory,getValue
 
     const onNext = () => {
         setPage(prev => prev+1)
-        if( page >= 4 ) setPage(4)
+        if( page >= 5 ) setPage(4)
     }
 
     useEffect(()=>{
