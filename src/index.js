@@ -3,8 +3,7 @@ import {createRoot} from "react-dom/client";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
-const App = React.lazy(() => import('./App'));
-
+import App from "./App";
 import store from "./store/store";
 
 

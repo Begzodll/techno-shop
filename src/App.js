@@ -1,13 +1,12 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom';
-const MainLayout = React.lazy(()=>import('./Layout/MainLayout'));
-const Home = React.lazy(()=>import('./Pages/Home'));
-const Products = React.lazy(()=>import('./Pages/Products'));
-const ResultSearch = React.lazy(()=>import('./Pages/ResultSearch'));
-const MoreProduct = React.lazy(()=>import('./Components/MoreProduct'));
-const Register = React.lazy(()=>import('./Pages/Register'));
 import {ToastContainer} from "react-toastify";
-
+import MainLayout from "./Layout/MainLayout";
+import Home from "./Pages/Home";
+import Products from "./Pages/Products";
+import ResultSearch from "./Pages/ResultSearch";
+import MoreProduct from "./Components/MoreProduct";
+import Register from "./Pages/Register";
 const App = () => {
     return(
         <div>

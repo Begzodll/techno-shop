@@ -5,8 +5,8 @@ import firebase from "../Components/firebase";
 import {signInWithGoogle,signInAccount,createUserAccount} from "../Components/firebase";
 import {connect} from "react-redux";
 
-const SingUp = React.lazy(()=>import('../Components/SingUp'));
-const SingIn = React.lazy(()=> import('../Components/SingIn'));
+import SingUp from "../Components/SingUp";
+import SingIn from "../Components/SingIn";
 
 import {
     getGoogleUser,
